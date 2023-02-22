@@ -1,12 +1,16 @@
+import { Request } from "express";
+import { makeMockResponse } from "../mocks/mockResponse";
+import { UsersController } from "./usersController"
+
 describe('Users Controller', ()=> {
+    const usersControler = new UsersController();
 
-    it('Deve somar os números', () => {
-        function soma (a:number, b:number) {
-            return a+b
-        }
-        
-        const resultado = soma(4, 5)
+    const mockRequest = {} as Request
+    const mockResponse = makeMockResponse()
 
-        expect(resultado).toBe(9)
-    })
+    it('Deve listar os nossos usuarios', ()=> {
+        usersControler.listarUsuario(mockRequest, mockResponse)
+        expect(mockResponse.state.status).toBe(200)
+        //expect(mockResponse.state.status).toHaveLength(4)
+    } )
 })
