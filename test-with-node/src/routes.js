@@ -11,7 +11,7 @@ routes.get('/users', (request, response) => {
 routes.post('/users', (request, response) => {
     const { name } = request.body
     database.push(name)
-    return response.status(201).json({'mensagem': `Usuário ${name} criado`})
+    return response.status(201).json({'mensagem': `Usuário criado`})
 })
 
 
