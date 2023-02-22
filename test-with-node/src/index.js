@@ -1,5 +1,7 @@
-function Wellcome () {
-    console.log('Hello World from nodemon')
-}
+import { Express } from "express";
 
-Wellcome()
+const server = Express();
+
+server.listen(5000, () => {
+    console.log('Servidor on na porta 5000')
+});
